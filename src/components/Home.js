@@ -14,14 +14,18 @@ const HomePage = () => {
   return (
     <div>
       {coins.map((coin) => (
-        <NavLink
-          key={coin.rank}
-          details={coin}
-          to="/details"
-          state={coin}
-        >
-          {coin.name}
-        </NavLink>
+        <div key={coin.rank}>
+          <NavLink
+            to="/details"
+            state={coin}
+          >
+            <h2>{coin.name}</h2>
+            <span>
+              $
+              {Number(coin.priceUsd).toFixed(3)}
+            </span>
+          </NavLink>
+        </div>
       ))}
     </div>
   );
