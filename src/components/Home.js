@@ -1,13 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { loadCoinThunk } from '../redux/crypto/crypto';
 
 const HomePage = () => {
-  const x = 5;
-  console.log(x);
+  const coins = useSelector((state) => state.coins);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(loadCoinThunk());
+  }, []);
+
   return (
     <div>
-      <div>This is home page</div>
-      <NavLink to="/details">Details</NavLink>
+      {coins.map((coin) => (
+        <NavLink
+          key={coin.rank}
+          details={coin}
+          to="/details"
+          state={coin}
+        >
+          {coin.name}
+        </NavLink>
+      ))}
     </div>
   );
 };

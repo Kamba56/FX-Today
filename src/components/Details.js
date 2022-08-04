@@ -1,7 +1,12 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 
-const Details = () => (
-  <div>THis is details</div>
-);
+const Details = () => {
+  const location = useLocation();
+  const { state } = location;
+  return (
+    <div>{state.name}</div>
+  );
+};
 
 export default Details;
