@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { loadCoinThunk, reset, searchThunk } from '../redux/crypto/crypto';
+import { loadCoinThunk, reset, searchCoin } from '../redux/crypto/crypto';
 import SearchBar from './Search';
 
 const HomePage = () => {
@@ -22,7 +22,7 @@ const HomePage = () => {
     if (value.search === '') {
       return;
     }
-    dispatch(searchThunk(value.search));
+    dispatch(searchCoin(value.search));
     setValue({ search: '' });
   };
 
@@ -31,15 +31,15 @@ const HomePage = () => {
   };
 
   return (
-    <section>
+    <section className="my-container">
       <SearchBar
         handleSearch={handleSearch}
         handleChange={handleChange}
         searchValue={value.search}
       />
-      <div>
+      <div className="grid">
         {crypt.map((coin) => (
-          <div key={coin.rank}>
+          <div key={coin.rank} className="grid-item">
             <NavLink
               to="/details"
               state={coin}

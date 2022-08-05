@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 const SearchBar = (props) => {
   const { handleSearch, handleChange, searchValue } = props;
   return (
-    <div>
+    <div className="search-div">
       <input type="text" placeholder="Search coins" value={searchValue} onChange={handleChange} />
       <button type="button" onClick={handleSearch}>
         <NavLink to="/search">

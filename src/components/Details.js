@@ -5,8 +5,8 @@ const Details = () => {
   const location = useLocation();
   const { state } = location;
   return (
-    <section>
-      <h1>
+    <section className="my-container">
+      <h1 className="title">
         {state.name}
         <span>
           {state.symbol}
@@ -14,27 +14,27 @@ const Details = () => {
       </h1>
       <p>
         Current price: $
-        {state.priceUsd}
+        {Number(state.priceUsd).toFixed(3)}
       </p>
       <p>
         24hr volume:
-        {state.volumeUsd24Hr}
+        {Number(state.volumeUsd24Hr).toFixed(3)}
       </p>
       <p>
         24hr Change percentage:
-        {state.changePercent24Hr}
+        {Number(state.changePercent24Hr).toFixed(3)}
       </p>
       <p>
         Marker Cap:
-        {state.marketCapUsd}
+        {Number(state.marketCapUsd).toFixed(3)}
       </p>
       <p>
         Supply:
-        {state.supply}
+        {Number(state.supply).toFixed(3)}
       </p>
       <p>
         Maximum Supply:
-        {state.maxSuppply}
+        {Number(state.maxSuppply).toFixed(3)}
       </p>
     </section>
   );

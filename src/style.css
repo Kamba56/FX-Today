@@ -1,3 +1,96 @@
 * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
   font-family: monospace;
+}
+
+body {
+  font-size: 18px;
+  background-color: #ec4c8a;
+  color: #fff;
+}
+
+header {
+  background: #cf4278;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.my-container {
+  width: 95%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(150px, 1fr));
+  grid-template-rows: auto;
+  column-gap: 1.5px;
+  row-gap: 1.5px;
+}
+
+.grid-item {
+  width: 100%;
+  padding: 10px;
+  background: #fc5293;
+}
+
+.grid-item:nth-child(6n+0),
+.grid-item:nth-child(3n+0) {
+  background: #dd4882;
+}
+
+.grid-item:hover {
+  background: #cf4278;
+}
+
+.grid-item a h2,
+h1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.search-div {
+  padding: 0 0 20px;
+  width: fit-content;
+  margin: auto;
+}
+
+.search-div > * {
+  height: 40px;
+  border: none;
+  padding: 0 10px;
+}
+
+.search-div button {
+  padding: 0 20px;
+  color: aliceblue;
+  background: #fc5293;
+  box-shadow: 2px 4px 10px #00000050;
+}
+
+.title {
+  padding: 20px;
+  text-align: center;
+  font-size: 2em;
+}
+
+.my-container p {
+  padding: 15px 0;
+  background: #dd4882;
+}
+
+.my-container p:nth-child(even) {
+  background: #cf4278;
 }
