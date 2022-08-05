@@ -5,13 +5,13 @@ import { Provider } from 'react-redux';
 import store from '../redux/configureStore';
 import HomePage from '../components/Home';
 
-test('Check if Header renders correctly', () => {
+test('Check if Home page renders correctly', () => {
   const tree = render(
     <Provider store={store}>
       <Router>
         <HomePage />
       </Router>
-    </Provider>
+    </Provider>,
   );
   expect(tree).toMatchSnapshot();
 });

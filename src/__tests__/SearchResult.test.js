@@ -11,7 +11,7 @@ test('Check if Searched results renders correctly', () => {
       <Router>
         <SearchResult />
       </Router>
-    </Provider>
+    </Provider>,
   );
   expect(tree).toMatchSnapshot();
 });
