@@ -17,7 +17,9 @@ const coinsReducer = (state = initial, action) => {
     case SEARCH:
       return {
         ...state,
-        search: action.payload,
+        search: state.crypto.filter((coin) => coin.id === action.payload
+        || coin.symbol.toLowerCase() === action.payload
+        || coin.name.toLowerCase() === action.payload),
       };
     case CLEAR:
       return {
@@ -34,9 +36,9 @@ export const loadCoin = (arr) => ({
   payload: arr,
 });
 
-export const searchCoin = (arr) => ({
+export const searchCoin = (coin) => ({
   type: SEARCH,
-  payload: arr,
+  payload: coin.toLowerCase(),
 });
 
 export const reset = () => ({
@@ -46,9 +48,5 @@ export const reset = () => ({
 export const loadCoinThunk = () => (dispatch) => fetch(baseURL)
   .then((res) => res.json())
   .then((data) => dispatch(loadCoin(data.data)));
-
-export const searchThunk = (coin) => (dispatch) => fetch(`${baseURL}?search=${coin}`)
-  .then((res) => res.json())
-  .then((data) => dispatch(searchCoin(data.data)));
 
 export default coinsReducer;

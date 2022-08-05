@@ -12,22 +12,24 @@ const SearchResult = () => {
     );
   }
   return (
-    <div>
-      {crypt.map((coin) => (
-        <div key={coin.rank}>
-          <NavLink
-            to="/details"
-            state={coin}
-          >
-            <h2>{coin.name}</h2>
-            <span>
-              $
-              {Number(coin.priceUsd).toFixed(3)}
-            </span>
-          </NavLink>
-        </div>
-      ))}
-    </div>
+    <section className="my-container">
+      <div className="grid">
+        {crypt.map((coin) => (
+          <div key={coin.rank} className="grid-item">
+            <NavLink
+              to="/details"
+              state={coin}
+            >
+              <h2>{coin.name}</h2>
+              <span>
+                $
+                {Number(coin.priceUsd).toFixed(3)}
+              </span>
+            </NavLink>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 
