@@ -46,7 +46,8 @@ a {
   background: #fc5293;
 }
 
-.grid-item:nth-child(6n+0), .grid-item:nth-child(3n+0) {
+.grid-item:nth-child(6n+0),
+.grid-item:nth-child(3n+0) {
   background: #dd4882;
 }
 
@@ -54,13 +55,14 @@ a {
   background: #cf4278;
 }
 
-.grid-item a h2, h1 {
+.grid-item a h2,
+h1 {
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .search-div {
-  padding: 0 0px 20px;
+  padding: 0 0 20px;
   width: fit-content;
   margin: auto;
 }
