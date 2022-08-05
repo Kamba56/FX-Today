@@ -31,15 +31,15 @@ const HomePage = () => {
   };
 
   return (
-    <section>
+    <section className="my-container">
       <SearchBar
         handleSearch={handleSearch}
         handleChange={handleChange}
         searchValue={value.search}
       />
-      <div>
+      <div className="grid">
         {crypt.map((coin) => (
-          <div key={coin.rank}>
+          <div key={coin.rank} className="grid-item">
             <NavLink
               to="/details"
               state={coin}
